@@ -1,18 +1,32 @@
 [gd_scene format=3 uid="uid://18gbswteactu"]
 
 [ext_resource type="PackedScene" uid="uid://nhk013rs6wda" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/path-long.glb" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://ci5qffmyr0xkb" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/fence.glb" id="2_0xm2m"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1jed4"]
-size = Vector3(0.21289063, 0.017578125, 0.41210938)
+size = Vector3(1.7728882, 0.017578125, 6.460205)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eftrj"]
+size = Vector3(0.50341797, 0.2869873, 0.09008789)
 
 [node name="Principal" type="Node3D" unique_id=489206148]
 
 [node name="Cenario" type="Node3D" parent="." unique_id=88564918]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Cenario" unique_id=1663451644]
+[node name="Chao" type="StaticBody3D" parent="Cenario" unique_id=1663451644]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cenario/StaticBody3D" unique_id=1210799833]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.005859375, -0.001953125)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cenario/Chao" unique_id=1210799833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007659912, 0.005859375, 0.010620117)
 shape = SubResource("BoxShape3D_1jed4")
 
-[node name="path-long2" parent="Cenario/StaticBody3D" unique_id=460514830 instance=ExtResource("1_ig7tw")]
+[node name="path-long2" parent="Cenario/Chao" unique_id=460514830 instance=ExtResource("1_ig7tw")]
+transform = Transform3D(8.6, 0, 0, 0, 1, 0, 0, 0, 16, 0, 0, 0)
+
+[node name="Cerca" type="StaticBody3D" parent="Cenario" unique_id=437161891]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cenario/Cerca" unique_id=1867941674]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0017089844, 0.1317749, 0.0032958984)
+shape = SubResource("BoxShape3D_eftrj")
+
+[node name="fence2" parent="Cenario/Cerca" unique_id=647673234 instance=ExtResource("2_0xm2m")]
