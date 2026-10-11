@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ci5qffmyr0xkb" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/fence.glb" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://c2tgffeq6ngny" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/building-type-a.glb" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dn8d2vyypw74s" path="res://assets/models/kenney_mini-characters/Models/GLB format/character-male-a.glb" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://3n7h5vox2auv" path="res://scripts/jogador.gd" id="4_7mycd"]
 [ext_resource type="PackedScene" uid="uid://buay1n5al71sb" path="res://assets/models/kenney_mini-characters/Models/GLB format/character-male-f.glb" id="5_lquwl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lquwl"]
@@ -82,6 +83,7 @@ shape = SubResource("BoxShape3D_1bvp3")
 
 [node name="Jogador" type="CharacterBody3D" parent="." unique_id=812874304]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.2858542)
+script = ExtResource("4_7mycd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Jogador" unique_id=1932279569]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14485168, 0)
