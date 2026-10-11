@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://nhk013rs6wda" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/path-long.glb" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://ci5qffmyr0xkb" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/fence.glb" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://c2tgffeq6ngny" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/building-type-a.glb" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://dn8d2vyypw74s" path="res://assets/models/kenney_mini-characters/Models/GLB format/character-male-a.glb" id="4_1bvp3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1jed4"]
 size = Vector3(1.7728882, 0.017578125, 6.460205)
@@ -12,6 +13,10 @@ size = Vector3(0.48355103, 0.29039, 0.06996155)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1bvp3"]
 size = Vector3(1.3140869, 0.85491943, 0.92681885)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hpjgf"]
+radius = 0.0859375
+height = 0.2885437
 
 [node name="Principal" type="Node3D" unique_id=489206148]
 
@@ -51,3 +56,16 @@ shape = SubResource("BoxShape3D_eftrj")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cenario/Casa" unique_id=340074433]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00091552734, 0.41574097, 0.0574646)
 shape = SubResource("BoxShape3D_1bvp3")
+
+[node name="Jogador" type="CharacterBody3D" parent="." unique_id=812874304]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.2858542)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Jogador" unique_id=1932279569]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14485168, 0)
+shape = SubResource("CapsuleShape3D_hpjgf")
+
+[node name="character-male-a2" parent="Jogador" unique_id=949106704 instance=ExtResource("4_1bvp3")]
+transform = Transform3D(0.405, 0, 0, 0, 0.405, 0, 0, 0, 0.405, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Jogador" unique_id=345034645]
+transform = Transform3D(-0.99999994, 0, -8.742277e-08, -2.8089376e-08, 0.94697577, 0.321305, 8.2787246e-08, 0.32130504, -0.9469757, 0, 0.32943454, -0.33283997)
