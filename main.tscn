@@ -4,6 +4,18 @@
 [ext_resource type="PackedScene" uid="uid://ci5qffmyr0xkb" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/fence.glb" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://c2tgffeq6ngny" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/building-type-a.glb" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dn8d2vyypw74s" path="res://assets/models/kenney_mini-characters/Models/GLB format/character-male-a.glb" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://buay1n5al71sb" path="res://assets/models/kenney_mini-characters/Models/GLB format/character-male-f.glb" id="5_lquwl"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lquwl"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_7mycd"]
+sky_material = SubResource("ProceduralSkyMaterial_lquwl")
+
+[sub_resource type="Environment" id="Environment_272bh"]
+background_mode = 2
+sky = SubResource("Sky_7mycd")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1jed4"]
 size = Vector3(1.7728882, 0.017578125, 6.460205)
@@ -18,7 +30,18 @@ size = Vector3(1.3140869, 0.85491943, 0.92681885)
 radius = 0.0859375
 height = 0.2885437
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ktqnf"]
+radius = 0.07128906
+height = 0.26651
+
 [node name="Principal" type="Node3D" unique_id=489206148]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=129000384]
+environment = SubResource("Environment_272bh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=464644824]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
 
 [node name="Cenario" type="Node3D" parent="." unique_id=88564918]
 
@@ -69,3 +92,13 @@ transform = Transform3D(0.405, 0, 0, 0, 0.405, 0, 0, 0, 0.405, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Jogador" unique_id=345034645]
 transform = Transform3D(-0.99999994, 0, -8.742277e-08, -2.8089376e-08, 0.94697577, 0.321305, 8.2787246e-08, 0.32130504, -0.9469757, 0, 0.32943454, -0.33283997)
+
+[node name="Inimigo" type="CharacterBody3D" parent="." unique_id=133726730]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50135624, 0, 1.2440635)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Inimigo" unique_id=1629777707]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13923645, 0)
+shape = SubResource("CapsuleShape3D_ktqnf")
+
+[node name="character-male-f2" parent="Inimigo" unique_id=1829111587 instance=ExtResource("5_lquwl")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
