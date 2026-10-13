@@ -82,7 +82,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00091552734, 0.41574097, 0
 shape = SubResource("BoxShape3D_1bvp3")
 
 [node name="Jogador" type="CharacterBody3D" parent="." unique_id=812874304]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.2858542)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51313925, 1.9660381)
 script = ExtResource("4_7mycd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Jogador" unique_id=1932279569]
@@ -90,10 +90,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14485168, 0)
 shape = SubResource("CapsuleShape3D_hpjgf")
 
 [node name="character-male-a2" parent="Jogador" unique_id=949106704 instance=ExtResource("4_1bvp3")]
-transform = Transform3D(0.405, 0, 0, 0, 0.405, 0, 0, 0, 0.405, 0, 0, 0)
+transform = Transform3D(-0.405, 0, -3.5406224e-08, 0, 0.405, 0, 3.5406224e-08, 0, -0.405, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Jogador" unique_id=345034645]
-transform = Transform3D(-0.99999994, 0, -8.742277e-08, -2.8089376e-08, 0.94697577, 0.321305, 8.2787246e-08, 0.32130504, -0.9469757, 0, 0.32943454, -0.33283997)
+transform = Transform3D(0.99999994, 0, 0, 0, 0.94721025, 0.32061294, 0, -0.32061297, 0.9472102, 0, 0.329, 0.333)
 
 [node name="Inimigo" type="CharacterBody3D" parent="." unique_id=133726730]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50135624, 0, 1.2440635)
