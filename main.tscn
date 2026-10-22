@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dn8d2vyypw74s" path="res://assets/models/kenney_mini-characters/Models/GLB format/character-male-a.glb" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://3n7h5vox2auv" path="res://scripts/jogador.gd" id="4_7mycd"]
 [ext_resource type="PackedScene" uid="uid://buay1n5al71sb" path="res://assets/models/kenney_mini-characters/Models/GLB format/character-male-f.glb" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://ik7vyyf0tuc3" path="res://scripts/inimigo.gd" id="6_kek77"]
 [ext_resource type="Script" uid="uid://bd6scctrear0o" path="res://scripts/item.gd" id="7_5vw27"]
 [ext_resource type="PackedScene" uid="uid://d13yb3voh8ehq" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/planter.glb" id="7_272bh"]
 
@@ -100,8 +101,10 @@ transform = Transform3D(-0.405, 0, -3.5406224e-08, 0, 0.405, 0, 3.5406224e-08, 0
 [node name="Camera3D" type="Camera3D" parent="Jogador" unique_id=345034645]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.94721025, 0.32061294, 0, -0.32061297, 0.9472102, 0, 0.329, 0.333)
 
-[node name="Inimigo" type="CharacterBody3D" parent="." unique_id=133726730]
+[node name="Inimigo" type="CharacterBody3D" parent="." unique_id=133726730 node_paths=PackedStringArray("alvo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50135624, 0, 1.2440635)
+script = ExtResource("6_kek77")
+alvo = NodePath("../PontosPatrulha/Ponto1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Inimigo" unique_id=1629777707]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13923645, 0)
@@ -166,6 +169,17 @@ shape = SubResource("BoxShape3D_hpjgf")
 
 [node name="planter2" parent="Itens/Item5" unique_id=1373655272 instance=ExtResource("7_272bh")]
 transform = Transform3D(0.515, 0, 0, 0, 0.515, 0, 0, 0, 0.515, 0, 0, 0)
+
+[node name="PontosPatrulha" type="Node3D" parent="." unique_id=1566245429]
+
+[node name="Ponto1" type="Marker3D" parent="PontosPatrulha" unique_id=339636492]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11562085, 0.021669686, 1.2196269)
+
+[node name="Ponto2" type="Marker3D" parent="PontosPatrulha" unique_id=1004256753]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42949623, 0.021669686, 1.459386)
+
+[node name="Ponto3" type="Marker3D" parent="PontosPatrulha" unique_id=1225918427]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.77599984, 0.021669686, 1.2196269)
 
 [connection signal="body_entered" from="Itens/Item" to="Itens/Item" method="_on_body_entered"]
 [connection signal="body_entered" from="Itens/Item2" to="Itens/Item2" method="_on_body_entered"]
