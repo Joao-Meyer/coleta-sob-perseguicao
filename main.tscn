@@ -101,17 +101,17 @@ transform = Transform3D(-0.405, 0, -3.5406224e-08, 0, 0.405, 0, 3.5406224e-08, 0
 [node name="Camera3D" type="Camera3D" parent="Jogador" unique_id=345034645]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.94721025, 0.32061294, 0, -0.32061297, 0.9472102, 0, 0.329, 0.333)
 
-[node name="Inimigo" type="CharacterBody3D" parent="." unique_id=133726730 node_paths=PackedStringArray("alvo")]
+[node name="Inimigo" type="CharacterBody3D" parent="." unique_id=133726730 node_paths=PackedStringArray("pontos_patrulha")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50135624, 0, 1.2440635)
 script = ExtResource("6_kek77")
-alvo = NodePath("../PontosPatrulha/Ponto1")
+pontos_patrulha = [NodePath("../PontosPatrulha/Ponto1"), NodePath("../PontosPatrulha/Ponto2"), NodePath("../PontosPatrulha/Ponto3")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Inimigo" unique_id=1629777707]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13923645, 0)
 shape = SubResource("CapsuleShape3D_ktqnf")
 
 [node name="character-male-f2" parent="Inimigo" unique_id=1829111587 instance=ExtResource("5_lquwl")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+transform = Transform3D(-0.4, 0, -3.4969112e-08, 0, 0.4, 0, 3.4969112e-08, 0, -0.4, 0, 0, 0)
 
 [node name="Itens" type="Node3D" parent="." unique_id=797316332]
 
