@@ -40,6 +40,9 @@ height = 0.26651
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_eftrj"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_kek77"]
+radius = 0.18617654
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_hpjgf"]
 size = Vector3(0.21646118, 0.11682129, 0.1807251)
 
@@ -119,6 +122,12 @@ transform = Transform3D(-0.4, 0, -3.4969112e-08, 0, 0.4, 0, 3.4969112e-08, 0, -0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Inimigo/AreaDeteccao" unique_id=1947310995]
 shape = SubResource("SphereShape3D_eftrj")
+
+[node name="AreaCaptura" type="Area3D" parent="Inimigo" unique_id=1462403539]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Inimigo/AreaCaptura" unique_id=611042824]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14051855, 0)
+shape = SubResource("SphereShape3D_kek77")
 
 [node name="Itens" type="Node3D" parent="." unique_id=797316332]
 

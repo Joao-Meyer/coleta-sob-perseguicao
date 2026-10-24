@@ -40,6 +40,11 @@ func _perseguir() -> void:
 func _ready() -> void:
 	$AreaDeteccao.body_entered.connect(_ao_detectar_corpo_entrar)
 	$AreaDeteccao.body_exited.connect(_ao_detectar_corpo_sair)
+	$AreaCaptura.body_entered.connect(_ao_capturar_corpo_entrar)
+
+func _ao_capturar_corpo_entrar(corpo: Node3D) -> void:
+	if corpo.is_in_group("player"):
+		print("Peguei você!")
 
 func _ao_detectar_corpo_sair(corpo: Node3D) -> void:
 	if corpo.is_in_group("player"):
