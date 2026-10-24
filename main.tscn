@@ -38,6 +38,8 @@ height = 0.2885437
 radius = 0.07128906
 height = 0.26651
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_eftrj"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_hpjgf"]
 size = Vector3(0.21646118, 0.11682129, 0.1807251)
 
@@ -112,6 +114,11 @@ shape = SubResource("CapsuleShape3D_ktqnf")
 
 [node name="character-male-f2" parent="Inimigo" unique_id=1829111587 instance=ExtResource("5_lquwl")]
 transform = Transform3D(-0.4, 0, -3.4969112e-08, 0, 0.4, 0, 3.4969112e-08, 0, -0.4, 0, 0, 0)
+
+[node name="AreaDeteccao" type="Area3D" parent="Inimigo" unique_id=313082963]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Inimigo/AreaDeteccao" unique_id=1947310995]
+shape = SubResource("SphereShape3D_eftrj")
 
 [node name="Itens" type="Node3D" parent="." unique_id=797316332]
 
