@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://18gbswteactu"]
 
+[ext_resource type="Script" uid="uid://1cd57x8yh77" path="res://scripts/principal.gd" id="1_efxa6"]
 [ext_resource type="PackedScene" uid="uid://nhk013rs6wda" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/path-long.glb" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://ci5qffmyr0xkb" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/fence.glb" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://c2tgffeq6ngny" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/building-type-a.glb" id="3_h2yge"]
@@ -48,6 +49,7 @@ radius = 0.18617654
 size = Vector3(0.21646118, 0.11682129, 0.1807251)
 
 [node name="Principal" type="Node3D" unique_id=489206148]
+script = ExtResource("1_efxa6")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=129000384]
 environment = SubResource("Environment_272bh")

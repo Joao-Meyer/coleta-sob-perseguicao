@@ -9,11 +9,15 @@ var referencia_jogador: Node3D = null
 
 var indice_patrulha := 0
 
-const VELOCIDADE := 1.5
+const VELOCIDADE_BASE := 1.5
+
+var velocidade_atual := VELOCIDADE_BASE
 
 const DISTANCIA_CHEGADA := 0.2
 
 func _physics_process(_delta: float) -> void:
+	velocidade_atual = VELOCIDADE_BASE * GameManager.dificuldade
+	
 	if estado == Estado.PATRULHA:
 		_patrulhar()
 	else:
@@ -30,12 +34,12 @@ func _patrulhar() -> void:
 		indice_patrulha += 1
 	if indice_patrulha == pontos_patrulha.size():
 		indice_patrulha = 0
-	velocity = direcao.normalized() * VELOCIDADE
+	velocity = direcao.normalized() * velocidade_atual
 	
 func _perseguir() -> void:
 	var direcao := referencia_jogador.global_position - global_position
 	direcao.y = 0
-	velocity = direcao.normalized() * VELOCIDADE
+	velocity = direcao.normalized() * velocidade_atual
 
 func _ready() -> void:
 	$AreaDeteccao.body_entered.connect(_ao_detectar_corpo_entrar)
@@ -44,7 +48,7 @@ func _ready() -> void:
 
 func _ao_capturar_corpo_entrar(corpo: Node3D) -> void:
 	if corpo.is_in_group("player"):
-		print("Peguei você!")
+		GameManager.perder()
 
 func _ao_detectar_corpo_sair(corpo: Node3D) -> void:
 	if corpo.is_in_group("player"):
