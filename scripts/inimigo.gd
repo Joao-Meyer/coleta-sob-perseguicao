@@ -16,6 +16,9 @@ var velocidade_atual := VELOCIDADE_BASE
 const DISTANCIA_CHEGADA := 0.2
 
 func _physics_process(_delta: float) -> void:
+	if GameManager.jogo_encerrado:
+		return
+
 	velocidade_atual = VELOCIDADE_BASE * GameManager.dificuldade
 	
 	if estado == Estado.PATRULHA:
