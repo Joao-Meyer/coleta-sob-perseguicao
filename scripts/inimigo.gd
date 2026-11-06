@@ -33,16 +33,22 @@ func _patrulhar() -> void:
 	var alvo := pontos_patrulha[indice_patrulha]
 	var direcao := alvo.global_position - global_position
 	direcao.y = 0
+	
 	if direcao.length() < DISTANCIA_CHEGADA:
 		indice_patrulha += 1
+	
 	if indice_patrulha == pontos_patrulha.size():
 		indice_patrulha = 0
+	
 	velocity = direcao.normalized() * velocidade_atual
 	
+	$Modelo/AnimationPlayer.play("walk")
+
 func _perseguir() -> void:
 	var direcao := referencia_jogador.global_position - global_position
 	direcao.y = 0
 	velocity = direcao.normalized() * velocidade_atual
+	$Modelo/AnimationPlayer.play("sprint")
 
 func _ready() -> void:
 	$AreaDeteccao.body_entered.connect(_ao_detectar_corpo_entrar)

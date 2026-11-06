@@ -118,7 +118,7 @@ pontos_patrulha = [NodePath("../PontosPatrulha/Ponto1"), NodePath("../PontosPatr
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13923645, 0)
 shape = SubResource("CapsuleShape3D_ktqnf")
 
-[node name="character-male-f2" parent="Inimigo" unique_id=1829111587 instance=ExtResource("5_lquwl")]
+[node name="Modelo" parent="Inimigo" unique_id=1829111587 instance=ExtResource("5_lquwl")]
 transform = Transform3D(-0.4, 0, -3.4969112e-08, 0, 0.4, 0, 3.4969112e-08, 0, -0.4, 0, 0, 0)
 
 [node name="AreaDeteccao" type="Area3D" parent="Inimigo" unique_id=313082963]
@@ -192,10 +192,10 @@ transform = Transform3D(0.515, 0, 0, 0, 0.515, 0, 0, 0, 0.515, 0, 0, 0)
 [node name="PontosPatrulha" type="Node3D" parent="." unique_id=1566245429]
 
 [node name="Ponto1" type="Marker3D" parent="PontosPatrulha" unique_id=339636492]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11562085, 0.41414893, 1.2196269)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7407267, 0.41414893, 1.2196269)
 
 [node name="Ponto2" type="Marker3D" parent="PontosPatrulha" unique_id=1004256753]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42949623, 0.021669686, 1.459386)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010432184, 0.021669686, 1.459386)
 
 [node name="Ponto3" type="Marker3D" parent="PontosPatrulha" unique_id=1225918427]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.77599984, 0.021669686, 1.2196269)
